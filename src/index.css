@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+*,
+::before,
+::after {
+    font-family: "Inter";
+    box-sizing: border-box;
+    margin: 0;
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+.header {
+  padding: 1em 0;
+}
+.header h1 {
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+}
