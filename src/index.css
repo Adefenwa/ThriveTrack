@@ -5,16 +5,66 @@
     font-family: "Inter";
     box-sizing: border-box;
     margin: 0;
+    color: #01d141c;
+}
+li {
+    list-style: none;
+}
+button {
+    border: none;
+    background: none;
 }
 .container {
-  width: 90%;
-  margin: 0 auto;
+    width: 90%;
+    margin: 0 auto;
 }
 .header {
-  padding: 1em 0;
+    padding: 1em 0;
 }
 .header h1 {
     font-weight: 600;
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
+}
+.body-text {
+    font-size: 14px;
+}
+.step-text {
+    font-size: 22px;
+    font-weight: 700;
+    padding: 0.5em 0;
+}
+
+.action-items {
+    margin: 1em 0;
+}
+.action-items-text {
+    font-size: 16px;
+}
+.action-items li {
+    padding: 0.5em 0;
+    font-size: 14px;
+    margin-left: -2.7em;
+    display: flex;
+    gap: 1em;
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.btns {
+    padding: 0.7em;
+    width: 20%;
+    border-radius: 3px;
+}
+
+.btn--prev {
+    background-color: #e8edf5;
+    color: #01d141c;
+}
+.btn--next {
+    background-color: #0d80f2;
+    color: #fff;
 }
