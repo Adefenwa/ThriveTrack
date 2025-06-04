@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "Self-Awareness",
+    "action_items": [
+      "Keep a daily journal for 1 week",
+      "Take a personality test (e.g., MBTI or Enneagram)",
+      "Ask 3 close friends about your strengths"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Set Clear Goals",
+    "action_items": [
+      "Write down 3 short-term goals",
+      "Create a vision board",
+      "Set a reminder to review goals weekly"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Learn & Improve",
+    "action_items": [
+      "Read 1 personal growth book",
+      "Follow 2 motivational YouTube channels or podcasts",
+      "Take a free online course (e.g., Coursera, Khan Academy)"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Practice Discipline",
+    "action_items": [
+      "Wake up and sleep at the same time daily",
+      "Create a daily to-do list",
+      "Use a habit tracker app"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Reflect & Adjust",
+    "action_items": [
+      "Do a weekly reflection every Sunday",
+      "Track your progress monthly",
+      "Write a 'letter to future me'"
+    ]
+  }
+]
