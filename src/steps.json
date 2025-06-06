@@ -2,6 +2,7 @@
   {
     "id": 1,
     "title": "Self-Awareness",
+    "description": "Understand who you are—your strengths, weaknesses, values, and passions. This forms the foundation for all personal growth.",
     "action_items": [
       "Keep a daily journal for 1 week",
       "Take a personality test (e.g., MBTI or Enneagram)",
@@ -11,6 +12,7 @@
   {
     "id": 2,
     "title": "Set Clear Goals",
+    "description": "Define what success means to you. Set short-term and long-term goals in different areas of life (career, health, relationships, etc.).",
     "action_items": [
       "Write down 3 short-term goals",
       "Create a vision board",
@@ -20,6 +22,7 @@
   {
     "id": 3,
     "title": "Learn & Improve",
+    "description": "Constant learning boosts your self-worth and helps you reach your goals. Read, watch, listen, and take courses.",
     "action_items": [
       "Read 1 personal growth book",
       "Follow 2 motivational YouTube channels or podcasts",
@@ -29,6 +32,7 @@
   {
     "id": 4,
     "title": "Practice Discipline",
+    "description": "Stay consistent with your routines. Build habits that push you closer to your goals even when motivation is low.",
     "action_items": [
       "Wake up and sleep at the same time daily",
       "Create a daily to-do list",
@@ -38,6 +42,7 @@
   {
     "id": 5,
     "title": "Reflect & Adjust",
+    "description": "Evaluate your growth regularly. Celebrate wins and learn from challenges. Adjust your goals and strategies as needed.",
     "action_items": [
       "Do a weekly reflection every Sunday",
       "Track your progress monthly",

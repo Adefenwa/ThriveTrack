@@ -1,12 +1,18 @@
-import steps from './steps.json'
+import steps from "./steps.json";
 
-console.log(steps)
+console.log(steps);
 export default function App() {
+    const currentStep = steps[0];
+
     return (
         <main className="wrapper">
             <div className="container">
                 <Header />
-                <Steps />
+                <Steps
+                    number="{currentStep.id}"
+                    title="{currentStep.title}"
+                    description="{currentStep.description}"
+                />
                 <Action />
                 <Buttons />
             </div>
@@ -21,14 +27,11 @@ function Header() {
         </header>
     );
 }
-function Steps() {
+function Steps(props) {
     return (
         <section className="steps">
-            <h2 className="step-text">Step 1: Self-Awareness</h2>
-            <p className="body-text">
-                Understand who you are—your strengths, weaknesses, values, and
-                passions. This forms the foundation for all personal growth.
-            </p>
+            <h2 className="step-text">Step {props.number}: {props.title}</h2>
+            <p className="body-text">{props.description}</p>
         </section>
     );
 }
@@ -44,7 +47,7 @@ function Action() {
                             id="action--1"
                             name="action--1"
                         />
-                        <label for="action--1">
+                        <label htmlFor="action--1">
                             Keep a daily journal for 1 week
                         </label>
                     </li>
@@ -54,7 +57,7 @@ function Action() {
                             id="action--2"
                             name="action--2"
                         />
-                        <label for="action--2">
+                        <label htmlFor="action--2">
                             Take a personality test (e.g., MBTI or Enneagram)
                         </label>
                     </li>
@@ -64,7 +67,7 @@ function Action() {
                             id="action--3"
                             name="action--3"
                         />
-                        <label for="action--3">
+                        <label htmlFor="action--3">
                             Ask 3 close friends about your strengths
                         </label>
                     </li>
@@ -75,16 +78,14 @@ function Action() {
 }
 
 function Buttons() {
-  return(
-    <section className="buttons">
-      
-      <button type="submit" className="btns btn--prev">
-        Previous
-      </button>
-      <button type="submit" className="btns btn--next">
-        Next
-      </button>
-      
-    </section>
-    )
+    return (
+        <section className="buttons">
+            <button type="submit" className="btns btn--prev">
+                Previous
+            </button>
+            <button type="submit" className="btns btn--next">
+                Next
+            </button>
+        </section>
+    );
 }
