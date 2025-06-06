@@ -10,9 +10,9 @@ export default function App() {
             <div className="container">
                 <Header />
                 <Steps
-                    number="{currentStep.id}"
-                    title="{currentStep.title}"
-                    description="{currentStep.description}"
+                    number={currentStep.id}
+                    title={currentStep.title}
+                    description={currentStep.description}
                 />
                 <Action />
                 <Buttons />
@@ -28,12 +28,11 @@ function Header() {
         </header>
     );
 }
-function Steps(props) {
-  console.log(props)
+function Steps({ number, title, description }) {
     return (
         <section className="steps">
-            <h2 className="step-text">Step {props.number}: {props.title}</h2>
-            <p className="body-text">{props.description}</p>
+            <h2 className="step-text">Step {number}: {title}</h2>
+            <p className="body-text">{description}</p>
         </section>
     );
 }
