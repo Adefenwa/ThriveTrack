@@ -3,6 +3,7 @@ import steps from "./steps.json";
 console.log(steps);
 export default function App() {
     const currentStep = steps[0];
+    console.log(currentStep)
 
     return (
         <main className="wrapper">
@@ -28,6 +29,7 @@ function Header() {
     );
 }
 function Steps(props) {
+  console.log(props)
     return (
         <section className="steps">
             <h2 className="step-text">Step {props.number}: {props.title}</h2>
