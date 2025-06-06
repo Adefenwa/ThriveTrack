@@ -1,3 +1,5 @@
+import steps from './steps.json'
+
 export default function App() {
     return (
         <main className="wrapper">
