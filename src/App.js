@@ -3,7 +3,9 @@ import steps from "./steps.json";
 console.log(steps);
 export default function App() {
     const currentStep = steps[0];
-    console.log(currentStep)
+    const actionItems = currentStep.action_items;
+    console.log(currentStep);
+    console.log(actionItems);
 
     return (
         <main className="wrapper">
@@ -14,7 +16,7 @@ export default function App() {
                     title={currentStep.title}
                     description={currentStep.description}
                 />
-                <Action />
+                <Action action={actionItems} />
                 <Buttons />
             </div>
         </main>
@@ -31,47 +33,32 @@ function Header() {
 function Steps({ number, title, description }) {
     return (
         <section className="steps">
-            <h2 className="step-text">Step {number}: {title}</h2>
+            <h2 className="step-text">
+                Step {number}: {title}
+            </h2>
             <p className="body-text">{description}</p>
         </section>
     );
 }
-function Action() {
+function Action({ action }) {
     return (
         <section className="action-items">
             <h3 className="action-items-text">Action Items</h3>
             <form>
                 <ul>
-                    <li>
+                  {action.map((task, index) => (
+                  <li key={index}>
                         <input
                             type="checkbox"
-                            id="action--1"
-                            name="action--1"
+                            id={`action--${index}`}
+                            name={`action--${index}`}
                         />
-                        <label htmlFor="action--1">
-                            Keep a daily journal for 1 week
+                        <label htmlFor={`action--${index}`}>
+                            {task}
                         </label>
                     </li>
-                    <li>
-                        <input
-                            type="checkbox"
-                            id="action--2"
-                            name="action--2"
-                        />
-                        <label htmlFor="action--2">
-                            Take a personality test (e.g., MBTI or Enneagram)
-                        </label>
-                    </li>
-                    <li>
-                        <input
-                            type="checkbox"
-                            id="action--3"
-                            name="action--3"
-                        />
-                        <label htmlFor="action--3">
-                            Ask 3 close friends about your strengths
-                        </label>
-                    </li>
+                  ))}
+                    
                 </ul>
             </form>
         </section>
