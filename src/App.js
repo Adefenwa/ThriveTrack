@@ -1,5 +1,6 @@
 import steps from './steps.json'
 
+console.log(steps)
 export default function App() {
     return (
         <main className="wrapper">
