@@ -41,7 +41,7 @@ function Steps({ number, title, description }) {
   );
 }
 function Action({ action }) {
-  const [checkedItem, setCheckedItem] = useState(false);
+  const [checkedItem, setCheckedItem] = useState([false, false, false]);
   return (
     <section className="action-items">
       <h3 className="action-items-text">Action Items</h3>
@@ -53,9 +53,14 @@ function Action({ action }) {
                 type="checkbox"
                 id={`action--${index}`}
                 name={`action--${index}`}
-                checked={checkedItem}
-                onClick={(e) => setCheckedItem(e.target.checked)}
+                checked={checkedItem[index]}
+                onChange={() => {
+                  const updated = [...checkedItem];
+                  updated[index] = !updated[index];
+                  setCheckedItem(updated);
+                }}
               />
+
               <label htmlFor={`action--${index}`}>{task}</label>
             </li>
           ))}
@@ -67,15 +72,11 @@ function Action({ action }) {
 
 function Buttons({ setStepNumber }) {
   function prev() {
-    console.log("Previous step clicked");
     setStepNumber((prevStep) => (prevStep === 0 ? 0 : prevStep - 1));
-    // Logic to go to the previous step can be added here
   }
 
   function next() {
-    console.log("Next step clicked");
     setStepNumber((prevStep) => (prevStep === 4 ? 4 : prevStep + 1));
-    // Logic to go to the next step can be added here
   }
 
   return (
