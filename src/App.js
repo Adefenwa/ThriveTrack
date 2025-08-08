@@ -6,6 +6,9 @@ export default function App() {
   const [stepNumber, setStepNumber] = useState(0);
   const currentStep = steps[stepNumber];
   const actionItems = currentStep.action_items;
+  const [checkedItem, setCheckedItem] = useState(
+    steps.map((step) => Array(step.action_items.length).fill(false))
+  );
 
   return (
     <main className="wrapper">
@@ -16,7 +19,19 @@ export default function App() {
           title={currentStep.title}
           description={currentStep.description}
         />
-        <Action action={actionItems} />
+        <Action
+          action={actionItems}
+          checked={checkedItem[stepNumber]}
+          onCheck={(idx) => {
+            setCheckedItem((items) =>
+              items.map((arr, i) =>
+                i === stepNumber
+                  ? arr.map((item, j) => (j === idx ? !item : item))
+                  : arr
+              )
+            );
+          }}
+        />
         <Buttons setStepNumber={setStepNumber} />
       </div>
     </main>
@@ -40,8 +55,7 @@ function Steps({ number, title, description }) {
     </section>
   );
 }
-function Action({ action }) {
-  const [checkedItem, setCheckedItem] = useState([false, false, false]);
+function Action({ action, checked, onCheck }) {
   return (
     <section className="action-items">
       <h3 className="action-items-text">Action Items</h3>
@@ -53,12 +67,8 @@ function Action({ action }) {
                 type="checkbox"
                 id={`action--${index}`}
                 name={`action--${index}`}
-                checked={checkedItem[index]}
-                onChange={() => {
-                  const updated = [...checkedItem];
-                  updated[index] = !updated[index];
-                  setCheckedItem(updated);
-                }}
+                checked={checked[index]}
+                onChange={() => onCheck(index)}
               />
 
               <label htmlFor={`action--${index}`}>{task}</label>
